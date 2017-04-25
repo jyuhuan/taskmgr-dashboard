@@ -1,4 +1,4 @@
-const server = 'http://localhost:3000';
+const server = 'https://taskmgr-service.herokuapp.com';
 
 const Q = {};
 Q.allTasks = () => $.getJSON(`${server}/tasks`);

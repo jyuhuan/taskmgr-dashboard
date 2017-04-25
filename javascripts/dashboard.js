@@ -34,7 +34,7 @@ const refresh = () => {
       if (!idExists(`#taskItem${t.id}`)) {
         const taskItem = makeTaskItem(t);
         // Determin whether it is done, and put it in the right sublist.
-        if (TaskUtils.isDone(t)) $('#lstClosedTasks').append(taskItem); else $('#lstOpenTasks').append(taskItem);
+        if (TaskUtils.isDone(t)) $('#lstClosedTasks').prepend(taskItem); else $('#lstOpenTasks').prepend(taskItem);
       }
 
       // Update progress
@@ -43,13 +43,13 @@ const refresh = () => {
       if (TaskUtils.isDone(t)) {
         // Make sure it is under "Closed Tasks"
         if ($(`#taskItem${t.id}`).parent().is('#lstOpenTasks')) {
-          $(`#taskItem${t.id}`).detach().appendTo('#lstClosedTasks');
+          $(`#taskItem${t.id}`).detach().prependTo('#lstClosedTasks');
         }
       }
       else {
         // Make sure it is under "Open Tasks"
         if ($(`#taskItem${t.id}`).parent().is('#lstClosedTasks')) {
-          $(`#taskItem${t.id}`).detach().appendTo('#lstOpenTasks');
+          $(`#taskItem${t.id}`).detach().prependTo('#lstOpenTasks');
         }
       }
 
