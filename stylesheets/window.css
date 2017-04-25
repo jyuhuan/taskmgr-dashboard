@@ -9,3 +9,10 @@
   -webkit-user-select: none;
   -webkit-app-region: drag
 }
+
+
+#Form {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}

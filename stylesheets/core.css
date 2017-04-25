@@ -4,7 +4,7 @@ body {
   height: 100vh;
   width: 100%;
   margin: 0;
-  font-family: 'Fira Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 300;
   font-size: 13px;
   align-items: center;
@@ -28,3 +28,20 @@ div.Pane div.Header {
   box-sizing: border-box;
 }
 
+
+#Form::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: transparent;
+}
+
+#Form::-webkit-scrollbar
+{
+	width: 4px;
+	background-color: transparent;
+}
+
+#Form::-webkit-scrollbar-thumb
+{
+	background-color: #555;
+}

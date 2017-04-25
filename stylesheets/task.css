@@ -6,6 +6,22 @@ div.Task {
   width: 100%;
   box-sizing: border-box;
   font-weight: 300;
+  position: relative;
+}
+
+div.Task div.ActionButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: transparent;
+}
+
+div.Task div.ActionButton:hover {
+  color: white;
+}
+
+div.Task div.ActionButton:active {
+  color: #888;
 }
 
 div.Task div.Indicator {
