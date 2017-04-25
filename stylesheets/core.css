@@ -1,0 +1,30 @@
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  align-items: center;
+  color: rgb(204, 204, 204);
+  background: rgb(60,60,60);
+  -webkit-user-select: none;
+  cursor: default;
+}
+
+div.Pane {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+div.Pane div.Header {
+  font-weight: 600;
+  font-size: 0.8em;
+  color: rgb(204,204,204);
+  background: rgb(55,55,55);
+  padding: 3px 10px;
+  box-sizing: border-box;
+}
+

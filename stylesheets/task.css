@@ -1,0 +1,66 @@
+div.Task {
+  display: flex;
+  flex-direction: row;
+  /*outline: 1px solid gray;*/
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-weight: 300;
+}
+
+div.Task div.Indicator {
+  display: inline-block;
+  max-height: 45px;
+  min-height: 45px;
+  min-width: 50px;
+  max-width: 50px;
+  box-sizing: border-box;
+  /*outline: 1px solid orange;*/
+}
+
+div.Task:hover {
+  background: rgb(65,65,65);
+}
+
+div.Indicator circle {
+  stroke: rgb(173,173,173);
+}
+
+div.Indicator text {
+  fill: rgb(173,173,173);
+  font-weight: 200;
+  box-sizing: border-box;
+}
+
+div.Task div.Info {
+  min-width: 10px;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+div.Task div.Description {
+  overflow: hidden;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  font-size: 0.9em;
+}
+
+div.Task div.Name {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
+
+div.Task div.ConsolePeek {
+  font-size: 0.9em;
+  font-weight: 200;
+  overflow: hidden;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
