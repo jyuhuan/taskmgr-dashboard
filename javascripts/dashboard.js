@@ -9,6 +9,14 @@ const idExists = (domId) => ($(domId).length > 0)
 const refresh = () => {
   // Check for new tasks or deleted tasks
   Q.allTasks().done(res => {
+    const taskIdSet = new Set(res.data.map(t => t.id));
+
+    // Remove deleted tasks
+    Array.from($('#lstOpenTasks').children()).concat(Array.from($('#lstClosedTasks').children())).forEach(x => {
+      const id = parseInt(x.id.substring(8));
+      if (!taskIdSet.has(id)) x.remove();
+    });
+
     res.data.forEach(t => {
       // Is this a new task?
       if (!idExists(`#taskItem${t.id}`)) {
@@ -32,8 +40,7 @@ const refresh = () => {
         if (TaskUtils.isDone(t)) $('#lstClosedTasks').prepend(taskItem); else $('#lstOpenTasks').prepend(taskItem);
 
         $(`#btnDelete${t.id}`).on('click', function (e) {
-          Q.delete(t.id);
-          $(`#taskItem${t.id}`).remove();
+          Q.delete(t.id, () => $(`#taskItem${t.id}`).remove());
         });
 
       }
@@ -41,6 +48,7 @@ const refresh = () => {
       // Update progress
       $(`#taskProgress${t.id}`).text(TaskUtils.progressStr(t));
 
+      // Put in the right sublist
       if (TaskUtils.isDone(t)) {
         // Make sure it is under "Closed Tasks"
         if ($(`#taskItem${t.id}`).parent().is('#lstOpenTasks')) {

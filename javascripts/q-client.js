@@ -16,8 +16,8 @@ Q.progressOf = (id) => $.getJSON(`${server}/tasks/${id}/progress`);
 // Q.setPropOfQ. = 
 
 
-Q.delete = (id) => $.ajax({
+Q.delete = (id, succ) => $.ajax({
   url: `${server}/tasks/${id}`,
   type: 'DELETE',
-  success: (res) => {}
+  success: (res) => succ()
 });
